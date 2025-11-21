@@ -72,5 +72,9 @@ def intelligent_chatbots():
     # return send_from_directory('.', 'intelligent_chatbots.html')
 
 
+# if __name__ == '__main__':
+#     app.run(debug=True) # Only use debug=True for development
+
+
 if __name__ == '__main__':
-    app.run(debug=True) # Only use debug=True for development
+    app.run(host="0.0.0.0", port=5000, debug=True)
