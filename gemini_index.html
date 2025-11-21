@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolutia AI - Cutting-Edge Generative AI Solutions</title>
+    <meta name="description" content="Evolutia AI is a leading provider of cutting-edge generative AI solutions, transforming industries with advanced technology.">
+    <meta name="keywords" content="Evolutia AI, generative AI, AI solutions, cutting-edge technology, industry transformation, advanced AI, AI applications, AI services, AI consulting, AI development, AI implementation, AI integration, AI customization, AI optimization, AI enhancement, AI innovation, AI future, AI potential, AI impact, AI revolution, AI transformation, AI disruption, AI progress, AI advancements, AI breakthroughs, AI possibilities.">
+    <meta name="author" content="Evolutia AI">
+    <link rel="icon" href="static/sospi_ai_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+    <style>
+        /*-----------------------------------*/
+        /* 1. Variables & Base Styles        */
+        /*-----------------------------------*/
+        :root {
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Inter', sans-serif;
+
+            /* Light Theme */
+            --bg-light: #f8f9fa; /* Off-white */
+            --text-light: #343a40; /* Dark gray */
+            --primary-light: #0a2540; /* Deep blue/charcoal */
+            --secondary-light: #635bff; /* Vibrant violet/blue */
+            --accent-light: #00d4ff; /* Bright cyan */
+            --card-bg-light: #ffffff;
+            --border-light: #e1e3e6;
+            --shadow-color-light: rgba(0, 0, 0, 0.08);
+            --shadow-hover-light: rgba(99, 91, 255, 0.2); /* Secondary color based shadow */
+            --navbar-bg-light: rgba(255, 255, 255, 0.85);
+            --navbar-blur: 10px;
+
+            /* Dark Theme (applied via [data-bs-theme="dark"]) */
+            --bg-dark: #121212; /* Very dark gray */
+            --text-dark: #e0e0e0; /* Light gray */
+            --primary-dark: #ffffff; /* White */
+            --secondary-dark: #7a7eff; /* Lighter violet/blue */
+            --accent-dark: #33e0ff; /* Lighter cyan */
+            --card-bg-dark: #1e1e1e; /* Slightly lighter dark */
+            --border-dark: #333;
+            --shadow-color-dark: rgba(0, 0, 0, 0.4);
+            --shadow-hover-dark: rgba(122, 126, 255, 0.3); /* Secondary dark color based shadow */
+            --navbar-bg-dark: rgba(30, 30, 30, 0.85);
+            /* Navbar blur remains the same */
+
+            --border-radius-sm: 0.375rem; /* 6px */
+            --border-radius-md: 0.75rem;  /* 12px */
+            --border-radius-lg: 1rem;    /* 16px */
+
+            --transition-speed: 0.3s;
+            --transition-ease: ease-in-out;
+        }
+
+        /* Apply dark theme variables */
+        [data-bs-theme="dark"] {
+            --bg-current: var(--bg-dark);
+            --text-current: var(--text-dark);
+            --primary-current: var(--primary-dark);
+            --secondary-current: var(--secondary-dark);
+            --accent-current: var(--accent-dark);
+            --card-bg-current: var(--card-bg-dark);
+            --border-current: var(--border-dark);
+            --shadow-color-current: var(--shadow-color-dark);
+            --shadow-hover-current: var(--shadow-hover-dark);
+            --navbar-bg-current: var(--navbar-bg-dark);
+        }
+
+        /* Apply light theme variables (default) */
+        :root:not([data-bs-theme="dark"]) {
+             --bg-current: var(--bg-light);
+             --text-current: var(--text-light);
+             --primary-current: var(--primary-light);
+             --secondary-current: var(--secondary-light);
+             --accent-current: var(--accent-light);
+             --card-bg-current: var(--card-bg-light);
+             --border-current: var(--border-light);
+             --shadow-color-current: var(--shadow-color-light);
+             --shadow-hover-current: var(--shadow-hover-light);
+             --navbar-bg-current: var(--navbar-bg-light);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background-color: var(--bg-current);
+            color: var(--text-current);
+            transition: background-color var(--transition-speed) var(--transition-ease), color var(--transition-speed) var(--transition-ease);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            color: var(--primary-current);
+            transition: color var(--transition-speed) var(--transition-ease);
+        }
+
+        p {
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        section {
+            padding: 80px 0;
+            overflow: hidden; /* Contain animations/shadows */
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
+            color: var(--primary-current);
+        }
+
+        /*-----------------------------------*/
+        /* 2. Navigation                   */
+        /*-----------------------------------*/
+        .navbar {
+            background-color: var(--navbar-bg-current);
+            backdrop-filter: blur(var(--navbar-blur));
+            -webkit-backdrop-filter: blur(var(--navbar-blur));
+            box-shadow: 0 2px 15px var(--shadow-color-current);
+            padding: 1rem 0;
+            transition: background-color var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease);
+            /* `position: sticky` added via Bootstrap class `sticky-top` */
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-current);
+            transition: color var(--transition-speed) var(--transition-ease);
+        }
+         .navbar-brand i {
+             color: var(--secondary-current);
+             transition: color var(--transition-speed) var(--transition-ease);
+         }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-current);
+            transition: color var(--transition-speed) var(--transition-ease);
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-current);
+            transition: width var(--transition-speed) var(--transition-ease);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-current);
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+             width: 60%; /* Underline effect */
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+        .navbar-toggler:focus {
+             box-shadow: none;
+        }
+        .navbar-toggler-icon {
+             /* Customize if needed */
+             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+
+        /*-----------------------------------*/
+        /* 3. CTA Button                   */
+        /*-----------------------------------*/
+         .cta-button {
+            background: linear-gradient(45deg, var(--secondary-current), var(--accent-current));
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            color: white; /* Text color contrasts well with gradient */
+            transition: transform 0.2s ease, box-shadow var(--transition-speed) var(--transition-ease), background var(--transition-speed) var(--transition-ease);
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 4px 10px rgba(0,0,0, 0.1);
+         }
+
+         .cta-button:hover {
+             transform: translateY(-3px) scale(1.03);
+             box-shadow: 0 8px 20px var(--shadow-hover-current);
+             background: linear-gradient(60deg, var(--secondary-current), var(--accent-current)); /* Slightly shift gradient */
+             color: white; /* Ensure color stays white */
+         }
+
+        .btn-outline-primary {
+            color: var(--secondary-current);
+            border-color: var(--secondary-current);
+            font-weight: 500;
+            padding: 10px 28px;
+            transition: all var(--transition-speed) var(--transition-ease);
+             border-radius: var(--border-radius-sm);
+        }
+         .btn-outline-primary:hover {
+             background-color: var(--secondary-current);
+             color: white;
+             transform: translateY(-2px);
+             box-shadow: 0 5px 15px var(--shadow-hover-current);
+         }
+
+
+        /*-----------------------------------*/
+        /* 4. Hero Section                 */
+        /*-----------------------------------*/
+        .hero-section {
+            padding: 120px 0 80px 0; /* More top padding */
+            background: var(--bg-current); /* Simple background */
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 3.8rem); /* Responsive font size */
+            font-weight: 700;
+            color: var(--primary-current);
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .hero-text {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--text-current);
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 500px; /* Limit width for readability */
+        }
+
+        /* Hero Image */
+        .hero-image-container img {
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 15px 40px var(--shadow-color-current);
+            transition: transform var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease);
+        }
+         .hero-image-container img:hover {
+            transform: scale(1.03);
+             box-shadow: 0 20px 50px var(--shadow-hover-current);
+         }
+
+         /* Floating shapes for visual interest */
+        .shape {
+            position: absolute;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .shape-1 {
+            top: 10%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            border-radius: 25% 75% 75% 25% / 25% 75% 75% 25%;
+            background: var(--accent-current);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            top: 5%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background: var(--secondary-current);
+            animation: float 8s ease-in-out infinite 1s;
+        }
+
+        .shape-3 {
+            bottom: 10%;
+            left: 15%;
+            width: 80px;
+            height: 80px;
+            border-radius: 30% 70% 50% 50% / 50%;
+            background: var(--accent-current);
+            animation: float 7s ease-in-out infinite 2s;
+        }
+        .shape-4 {
+            bottom: 40%;
+            right: 50%;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--secondary-current);
+            animation: float 9s ease-in-out infinite 3s;
+        }
+        .shape-5 {
+            top: 20%;
+            left: 20%;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: var(--accent-current);
+            animation: float 10s ease-in-out infinite 4s;
+        }
+        .shape-6 {
+            bottom: 5%;
+            right: 45%;
+            width: 100px;
+            height: 100px;
+            border-radius: 33% 67% 37% 73% / 33% 67% 27% 83%;
+            background: var(--secondary-current);
+            animation: float 11s ease-in-out infinite 5s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0); }
+        }
+
+
+        /*-----------------------------------*/
+        /* 5. Service Cards                */
+        /*-----------------------------------*/
+        .service-card {
+            background-color: var(--card-bg-current);
+            border-radius: var(--border-radius-md);
+            padding: 40px 30px;
+            box-shadow: 0 5px 20px var(--shadow-color-current);
+            transition: transform var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease), border-color var(--transition-speed) var(--transition-ease), background-color var(--transition-speed) var(--transition-ease);
+            border: 1px solid transparent;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* For potential future effects */
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px var(--shadow-hover-current);
+            border-color: var(--secondary-current);
+        }
+
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--secondary-current);
+            margin-bottom: 25px;
+            transition: color var(--transition-speed) var(--transition-ease), transform 0.2s ease;
+            display: inline-block; /* Needed for transform */
+        }
+         .service-card:hover .service-icon {
+            transform: scale(1.1);
+         }
+
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-current);
+            margin-bottom: 15px;
+            transition: color var(--transition-speed) var(--transition-ease);
+        }
+
+        .service-text {
+            font-size: 1rem;
+            color: var(--text-current);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Push link to bottom */
+             transition: color var(--transition-speed) var(--transition-ease);
+        }
+         .service-card .learn-more {
+             font-weight: 600;
+             color: var(--secondary-current);
+             text-decoration: none;
+             transition: color var(--transition-speed) var(--transition-ease);
+         }
+         .service-card .learn-more:hover {
+             color: var(--accent-current);
+         }
+
+
+        /*-----------------------------------*/
+        /* 6. Why Us Section               */
+        /*-----------------------------------*/
+        .why-us-section {
+            background-color: var(--bg-current); /* Use standard bg or a slightly different shade */
+             /* Example: Slightly darker background for contrast */
+             /* background-color: color-mix(in srgb, var(--bg-current) 95%, black); */
+        }
+
+        .why-us-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius-md);
+            transition: transform var(--transition-speed) var(--transition-ease), background-color var(--transition-speed) var(--transition-ease);
+            /* No initial shadow for a flatter look, or add subtle one */
+             /* box-shadow: 0 3px 10px var(--shadow-color-current); */
+        }
+
+        .why-us-card:hover {
+            transform: translateY(-8px);
+            background-color: var(--card-bg-current); /* Add background on hover */
+            box-shadow: 0 10px 30px var(--shadow-color-current);
+        }
+
+        .why-us-icon {
+            font-size: 2.5rem;
+            color: var(--accent-current); /* Use accent color */
+            margin-bottom: 25px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .why-us-card:hover .why-us-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .why-us-card h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-current);
+            margin-bottom: 15px;
+        }
+
+        .why-us-card p {
+            font-size: 1rem;
+            color: var(--text-current);
+            opacity: 0.9;
+        }
+
+
+        /*-----------------------------------*/
+        /* 7. Testimonial Section          */
+        /*-----------------------------------*/
+        .testimonial-section {
+             background-color: var(--bg-current);
+             /* Optionally add a subtle pattern or gradient */
+        }
+
+        .testimonial-card {
+            background-color: var(--card-bg-current);
+            border-radius: var(--border-radius-md);
+            padding: 40px;
+            box-shadow: 0 8px 25px var(--shadow-color-current);
+            margin: 0 15px; /* Default Bootstrap carousel spacing */
+            transition: background-color var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease);
+             border-left: 5px solid var(--secondary-current); /* Add accent border */
+        }
+
+        .testimonial-text {
+            font-size: 1.15rem;
+            color: var(--text-current);
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 40px; /* Space for quote icon */
+        }
+         .testimonial-text::before {
+             content: '\F6B0'; /* Bootstrap Icons quote */
+             font-family: 'bootstrap-icons';
+             position: absolute;
+             left: 0;
+             top: 0;
+             font-size: 1.8rem;
+             color: var(--secondary-current);
+             opacity: 0.7;
+         }
+
+
+        .testimonial-author {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-current);
+            text-align: right;
+        }
+
+        .testimonial-author cite {
+            font-style: normal;
+            font-weight: 400;
+            color: var(--text-current);
+            opacity: 0.8;
+            display: block; /* Put title on new line */
+            font-size: 0.9rem;
+        }
+
+        /* Carousel Controls */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+             background-color: var(--secondary-current);
+             border-radius: 50%;
+             padding: 15px;
+             background-size: 60%; /* Adjust icon size */
+             opacity: 0.8;
+             transition: opacity var(--transition-speed) var(--transition-ease);
+        }
+        .carousel-control-prev:hover .carousel-control-prev-icon,
+        .carousel-control-next:hover .carousel-control-next-icon {
+            opacity: 1;
+        }
+
+        /*-----------------------------------*/
+        /* 8. Contact Section              */
+        /*-----------------------------------*/
+        .contact-section {
+            background: linear-gradient(to bottom, var(--bg-current), color-mix(in srgb, var(--bg-current) 90%, black));
+        }
+
+        .contact-form {
+            background-color: var(--card-bg-current);
+            padding: 40px;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 10px 30px var(--shadow-color-current);
+            transition: background-color var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease);
+        }
+
+        .contact-form .form-control {
+            border: 1px solid var(--border-current);
+            border-radius: var(--border-radius-sm);
+            padding: 14px;
+            font-size: 1rem;
+            transition: border-color var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease), background-color var(--transition-speed) var(--transition-ease);
+            background-color: var(--bg-current); /* Match overall background */
+            color: var(--text-current);
+        }
+
+        .contact-form .form-control:focus {
+            border-color: var(--secondary-current);
+            box-shadow: 0 0 0 0.25rem var(--shadow-hover-current); /* Use theme shadow */
+            background-color: var(--card-bg-current); /* Slightly different focus background */
+            outline: none;
+        }
+         .contact-form .form-control::placeholder {
+            color: var(--text-current);
+             opacity: 0.6;
+         }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-info {
+            padding-left: 30px; /* Adjusted padding */
+        }
+
+        .contact-info h4 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary-current);
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            color: var(--text-current);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            color: var(--secondary-current);
+            margin-right: 15px;
+            font-size: 1.3rem;
+            width: 25px; /* Align icons */
+            text-align: center;
+        }
+
+        .contact-info .social-links a {
+            color: var(--text-current);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color var(--transition-speed) var(--transition-ease), transform 0.2s ease;
+            display: inline-block; /* Allows transform */
+        }
+        .contact-info .social-links a:hover {
+            color: var(--secondary-current);
+             transform: scale(1.1);
+        }
+
+
+        /*-----------------------------------*/
+        /* 9. Footer                       */
+        /*-----------------------------------*/
+        .footer {
+            background-color: var(--primary-light); /* Use the primary dark blue for footer base */
+            color: rgba(255, 255, 255, 0.8);
+            padding: 40px 0;
+            font-size: 0.95rem;
+        }
+        [data-bs-theme="dark"] .footer {
+            background-color: #111; /* Even darker for dark mode footer */
+        }
+
+        .footer p {
+            margin-bottom: 0;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color var(--transition-speed) var(--transition-ease);
+        }
+
+        .footer a:hover {
+            color: var(--accent-light); /* Use light accent for hover */
+        }
+         [data-bs-theme="dark"] .footer a:hover {
+            color: var(--accent-dark);
+         }
+
+        /*-----------------------------------*/
+        /* 10. Animations & Utilities       */
+        /*-----------------------------------*/
+        /* Refine existing or add custom animations */
+        .animate__fadeInLeft {
+             animation-duration: 0.8s;
+             animation-timing-function: ease-out;
+        }
+        .animate__fadeInRight {
+            animation-duration: 0.8s;
+            animation-timing-function: ease-out;
+        }
+         /* Example: Add subtle fade-in up */
+         .fade-in-up {
+             opacity: 0;
+             transform: translateY(20px);
+             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+         }
+         .fade-in-up.visible { /* Add 'visible' class with JS on scroll */
+             opacity: 1;
+             transform: translateY(0);
+         }
+
+        /* Stagger children animation example (needs JS) */
+         .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+         }
+
+
+        /*-----------------------------------*/
+        /* 11. Responsive Adjustments      */
+        /*-----------------------------------*/
+        @media (max-width: 992px) {
+            .hero-content {
+                text-align: center;
+                padding-right: 0;
+                margin-bottom: 50px; /* Space between text and image on smaller screens */
+            }
+             .hero-text {
+                 margin-left: auto;
+                 margin-right: auto;
+             }
+            .hero-image-container {
+                 text-align: center;
+             }
+
+            .contact-info {
+                padding-left: 0;
+                margin-top: 50px;
+                text-align: center;
+            }
+             .contact-info p {
+                justify-content: center;
+             }
+            .section-title {
+                font-size: 2.4rem;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+             section {
+                 padding: 60px 0;
+             }
+            .hero-section {
+                padding: 80px 0 60px 0;
+                 min-height: auto;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-text {
+                 font-size: 1rem;
+            }
+            .testimonial-card {
+                margin: 15px 0; /* Adjust carousel margin for stacking */
+            }
+            .footer {
+                 text-align: center;
+            }
+             .footer .text-md-end {
+                 text-align: center !important;
+                 margin-top: 15px;
+             }
+        }
+
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-main" data-bs-offset="80"> <nav id="navbar-main" class="navbar navbar-expand-lg sticky-top"> <div class="container">
+
+            <a class="navbar-brand" href="#home"><i class="bi bi-stars me-2"></i>Evolutia AI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <li class="nav-item">
+                        <a class="nav-link active" href="#home" data-i18n="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services" data-i18n="services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#why-us" data-i18n="why_us">Why Us</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#testimonials" data-i18n="testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" data-i18n="contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-globe"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                          <li><button class="dropdown-item language-btn" data-lang="en">English</button></li>
+                          <li><button class="dropdown-item language-btn" data-lang="es">Español</button></li>
+                        </ul>
+                      </li>
+                     
+                </ul>
+                <a href="#contact" class="btn cta-button ms-lg-3" data-i18n="get_started">Get Started</a>
+                </div>
+               
+
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        
+        <div class="container">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+            <div class="shape shape-6"></div>
+            <div class="row align-items-center justify-content-between gy-5">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="hero-title animate__animated animate__fadeInLeft" data-i18n="home-title">Next-Gen AI Solutions <br> Tailored for Your Growth</h1>
+                    <p class="hero-text animate__animated animate__fadeInLeft" style="animation-delay: 0.2s;" data-i18n="home-text">Empowering SMBs with intuitive, powerful Generative AI tools that drive efficiency and innovation.</p>
+                    <div class="mt-4 animate__animated animate__fadeInLeft" style="animation-delay: 0.4s;">
+                        <a href="#services" class="btn cta-button me-3 mb-2 mb-md-0" data-i18n="explore_services">Explore Services</a>
+                        <a href="#contact" class="btn btn-outline-primary mb-2 mb-md-0" data-i18n="request_consultation">Request Consultation</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 hero-image-container d-none d-lg-block">
+                     <img src="static/main_pic.png"
+                         class="img-fluid animate__animated animate__fadeInRight" alt="Modern AI Solutions Visual">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-i18n="our-services-title">Our AI-Powered Services</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                    <div class="card service-card">
+                        <i class="bi bi-chat-quote service-icon"></i>
+                        <h4 class="service-title" data-i18n="intelligent_chatbots">Intelligent Chatbots</h4>
+                        <p class="service-text" data-i18n="intelligent_chatbots_text">Engage customers 24/7 with context-aware, AI-driven chatbots trained on your business data.</p>
+                        <a href="intelligent-chatbots" class="learn-more mt-auto" data-i18n="learn_more">Learn More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                </div>
+                 <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                    <div class="card service-card" style="transition-delay: 0.1s;"> <i class="bi bi-gear-wide-connected service-icon"></i>
+                        <h4 class="service-title" data-i18n="workflow_automation">Workflow Automation</h4>
+                        <p class="service-text" data-i18n="workflow_automation_text">Streamline repetitive tasks and optimize operations using smart AI automation solutions.</p>
+                         <a href="#" class="learn-more mt-auto" data-i18n="learn_more">Learn More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                    <div class="card service-card" style="transition-delay: 0.2s;"> <i class="bi bi-robot service-icon"></i>
+                        <h4 class="service-title" data-i18n="predictive_analytics">Predictive Analytics</h4>
+                        <p class="service-text" data-i18n="predictive_analytics_text">Gain actionable insights and make informed decisions with AI-driven predictive analytics.</p>
+                         <a href="#" class="learn-more mt-auto" data-i18n="learn_more">Learn More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                    <div class="card service-card" style="transition-delay: 0.2s;"> <i class="bi bi-code-square service-icon"></i>
+                        <h4 class="service-title" data-i18n="website_creation">Website Creation and Optimization</h4>
+                        <p class="service-text" data-i18n="website_creation_text">Create and optimize your website for better user experience and higher conversion rates with AI-driven tools.</p>
+                         <a href="#" class="learn-more mt-auto" data-i18n="learn_more">Learn More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                    <div class="card service-card" style="transition-delay: 0.2s;"> <i class="bi bi-file-earmark-text service-icon"></i>
+                        <h4 class="service-title" data-i18n="content_generation">Content Generation</h4>
+                        <p class="service-text" data-i18n="content_generation_text">Generate high-quality marketing copy, reports, and creative content efficiently with AI assistance.</p>
+                         <a href="#" class="learn-more mt-auto" data-i18n="learn_more">Learn More <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="why-us-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="why_partner_with_title">Why Partner With Evolutia AI?</h2>
+            <div class="row g-4">
+                 <div class="col-md-4">
+                    <div class="why-us-card">
+                        <i class="bi bi-bullseye why-us-icon"></i>
+                        <h4 data-i18n="tailored_solutions">Tailored Solutions</h4>
+                        <p data-i18n="tailored_solutions_text">Custom AI strategies focused specifically on SMB challenges and opportunities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-us-card">
+                         <i class="bi bi-people-fill why-us-icon"></i>
+                        <h4 data-i18n="expert_ai_team">Expert AI Team</h4>
+                        <p data-i18n="expert_ai_team_text">Access dedicated specialists in AI, machine learning, and business integration.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="why-us-card">
+                        <i class="bi bi-graph-up-arrow why-us-icon"></i>
+                        <h4 data-i18n="measurable_results">Measurable Results</h4>
+                        <p data-i18n="measurable_results_text">Focus on delivering tangible ROI and significant efficiency gains for your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section id="testimonials" class="testimonial-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="hear_from_clients_title">Hear From Our Clients</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"Evolutia AI's chatbot didn't just answer questions, it improved our lead conversion rate significantly. Truly impressive!"</p>
+                                    <footer class="testimonial-author">
+                                        Alex Chen
+                                        <cite>Marketing Director, Innovate Solutions</cite>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"The workflow automation saved us countless hours. We can now focus on strategic growth instead of manual tasks."</p>
+                                     <footer class="testimonial-author">
+                                        Maria Garcia
+                                        <cite>Operations Manager, GrowthHub Co.</cite>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"The content generation tool is fantastic. It helps our small team produce consistent, high-quality blog posts and social media updates."</p>
+                                     <footer class="testimonial-author">
+                                        Sam Peterson
+                                        <cite>Founder, Digital Leap Agency</cite>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden" data-i18n="previous">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden" data-i18n="next">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="get_started_title">Ready to Elevate Your Business with AI?</h2>
+            <div class="row g-4 g-lg-5 align-items-center">
+                <div class="col-lg-6">
+                    <form class="contact-form" id="contactForm">
+                        <h4 class="mb-4 text-center text-lg-start" data-i18n="contact_us_title">Send Us a Message</h4>
+                        <div class="mb-3">
+                             <input type="text" id="contactName" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                             <input type="email" id="contactEmail" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                             <input type="text" id="contactCompany" class="form-control" placeholder="Your Company (Optional)">
+                        </div>
+                        <div class="mb-3">
+                             <textarea id="contactMessage" class="form-control" rows="5" placeholder="How can AI help your business?" required></textarea>
+                        </div>
+                        <button data-i18n="submit_request" type="submit" class="btn cta-button w-100">Submit Request</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h4 class="fw-bold mb-4" data-i18n="contact_title">Get in Touch</h4>
+                        <p><i class="bi bi-envelope-fill"></i> javiersospedralegarda@gmail.com</p>
+                        <!-- <p><i class="bi bi-telephone-fill"></i> (555) 123-4567</p> -->
+                        <p><i class="bi bi-geo-alt-fill"></i> 123 AI Avenue, Tech City, TX 75001</p>
+                        <!-- <div class="mt-4 pt-3 social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p>&copy; <span id="currentYear"></span> Evolutia AI. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Basic Scrollspy Activation (Bootstrap handles this via attributes)
+        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+            target: '#navbar-main',
+            offset: 80 // Adjust offset based on navbar height
+        });
+
+        //--- Optional: Dark Mode Toggle ---
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or system preference
+        const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        htmlElement.setAttribute('data-bs-theme', currentTheme);
+
+        if (darkModeToggle) {
+            // Update button icon based on initial theme
+            const icon = darkModeToggle.querySelector('i');
+            if (currentTheme === 'dark') {
+                icon.classList.remove('bi-moon-stars-fill');
+                icon.classList.add('bi-sun-fill');
+            }
+
+            darkModeToggle.addEventListener('click', () => {
+                const newTheme = htmlElement.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+                htmlElement.setAttribute('data-bs-theme', newTheme);
+                localStorage.setItem('theme', newTheme); // Save preference
+
+                // Update button icon
+                if (newTheme === 'dark') {
+                    icon.classList.remove('bi-moon-stars-fill');
+                    icon.classList.add('bi-sun-fill');
+                } else {
+                     icon.classList.remove('bi-sun-fill');
+                     icon.classList.add('bi-moon-stars-fill');
+                }
+            });
+        }
+
+        //--- Optional: Simple Scroll Animation ---
+        const observerOptions = {
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Use with .fade-in-up etc.
+                    observer.unobserve(entry.target); // Optional: stop observing once animated
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Observe elements you want to animate
+        document.querySelectorAll('.service-card, .why-us-card, .contact-form, .contact-info').forEach(el => {
+            el.classList.add('fade-in-up'); // Add initial state class
+            observer.observe(el);
+        });
+
+    </script>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get form data
+        const name = document.getElementById('contactName').value;
+        const email = document.getElementById('contactEmail').value;
+        const company = document.getElementById('contactCompany').value;
+        const message = document.getElementById('contactMessage').value;
+        console.log('The form has been clicked.');
+
+        // Prepare the data to send
+        const formData = {
+            name: name,
+            email: email,
+            company: company,
+            message: message
+        };
+
+        // --- Configuration ---
+        // const serverUrl = '/api/submit-contact-form'; // Replace with your server-side endpoint URL
+        const serverUrl = 'http://127.0.0.1:5000/api/submit-contact-form';
+        // --- End Configuration ---
+
+        // Send the data to the server using the Fetch API
+        fetch(serverUrl, {
+            method: 'POST', // Use POST to send data
+            headers: {
+                'Content-Type': 'application/json' // Indicate that we are sending JSON data
+            },
+            body: JSON.stringify(formData) // Convert the JavaScript object to a JSON string
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json(); // Or response.text() if your server sends plain text
+        })
+        .then(data => {
+            console.log('Success:', data);
+            // Optionally, display a success message to the user
+            alert('Your request has been submitted successfully!');
+            document.getElementById('contactForm').reset(); // Clear the form
+        })
+        .catch((error) => {
+            console.error('Error sending data to server:', error);
+            // Optionally, display an error message to the user
+            alert('There was an error submitting your request. Please try again later.');
+        });
+    });
+
+    // Function to set the active language
+    function setActiveLanguage(language) {
+        // Store the selected language in localStorage for persistence
+        localStorage.setItem('language', language);
+        
+        // Update the document language attribute
+        document.documentElement.setAttribute('lang', language);
+        
+        // Load and apply translations
+        loadTranslations(language);
+    }
+
+    // Load translations based on user selection or browser settings
+    async function loadTranslations(language) {
+    try {
+        const response = await fetch(`/translations/${language}.json`);
+        const translations = await response.json();
+        
+        // Apply translations to elements with data-i18n attributes
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[key]) {
+            element.innerHTML = translations[key];
+        }
+        });
+        
+        // Highlight active language button
+        document.querySelectorAll('.language-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === language) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+        });
+    } catch (error) {
+        console.error('Failed to load translations:', error);
+    }
+    }
+
+    // Initialize with default language or user preference
+    document.addEventListener('DOMContentLoaded', () => {
+    // Add event listeners to language buttons
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        setActiveLanguage(lang);
+        });
+    });
+    
+    // Load the saved language or default to browser language
+    const userLang = localStorage.getItem('language') || navigator.language.split('-')[0] || 'en';
+    setActiveLanguage(userLang);
+    });
+</script>
+</body>
+</html>

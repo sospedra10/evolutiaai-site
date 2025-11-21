@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light"> 
+<head>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '999108841993023');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=999108841993023&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolutia AI - Cutting-Edge Generative AI Solutions</title>
+    <meta name="description" content="Evolutia AI is a leading provider of cutting-edge generative AI solutions, transforming industries with advanced technology.">
+    <meta name="keywords" content="Evolutia AI, generative AI, AI solutions, cutting-edge technology, industry transformation, advanced AI, AI applications, AI services, AI consulting, AI development, AI implementation, AI integration, AI customization, AI optimization, AI enhancement, AI innovation, AI future, AI potential, AI impact, AI revolution, AI transformation, AI disruption, AI progress, AI advancements, AI breakthroughs, AI possibilities.">
+    <meta name="author" content="Evolutia AI">
+    <link rel="icon" href="static/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+    
+
+
+    <style>
+        /*-----------------------------------*/
+        /* 1. Variables & Base Styles        */
+        /*-----------------------------------*/
+        :root {
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Inter', sans-serif;
+
+            /* Light Theme */
+            --bg-light: #f8f9fa; /* Off-white */
+            --text-light: #343a40; /* Dark gray */
+            --primary-light: #0a2540; /* Deep blue/charcoal */
+            --secondary-light: #635bff; /* Vibrant violet/blue */
+            --accent-light: #00d4ff; /* Bright cyan */
+            --card-bg-light: #ffffff;
+            --border-light: #e1e3e6;
+            --shadow-color-light: rgba(0, 0, 0, 0.08);
+            --shadow-hover-light: rgba(99, 91, 255, 0.2); /* Secondary color based shadow */
+            --navbar-bg-light: rgba(255, 255, 255, 0.85);
+            --navbar-blur: 10px;
+
+            /* Dark Theme (applied via [data-bs-theme="dark"]) */
+            --bg-dark: #121212; /* Very dark gray */
+            --text-dark: #e0e0e0; /* Light gray */
+            --primary-dark: #ffffff; /* White */
+            --secondary-dark: #7a7eff; /* Lighter violet/blue */
+            --accent-dark: #33e0ff; /* Lighter cyan */
+            --card-bg-dark: #1e1e1e; /* Slightly lighter dark */
+            --border-dark: #333;
+            --shadow-color-dark: rgba(0, 0, 0, 0.4);
+            --shadow-hover-dark: rgba(122, 126, 255, 0.3); /* Secondary dark color based shadow */
+            --navbar-bg-dark: rgba(30, 30, 30, 0.85);
+            /* Navbar blur remains the same */
+
+            --border-radius-sm: 0.375rem; /* 6px */
+            --border-radius-md: 0.75rem;  /* 12px */
+            --border-radius-lg: 1rem;    /* 16px */
+
+            --transition-speed: 0.3s;
+            --transition-ease: ease-in-out;
+        }
+
+        /* Apply dark theme variables */
+        [data-bs-theme="dark"] {
+            --bg-current: var(--bg-dark);
+            --text-current: var(--text-dark);
+            --primary-current: var(--primary-dark);
+            --secondary-current: var(--secondary-dark);
+            --accent-current: var(--accent-dark);
+            --card-bg-current: var(--card-bg-dark);
+            --border-current: var(--border-dark);
+            --shadow-color-current: var(--shadow-color-dark);
+            --shadow-hover-current: var(--shadow-hover-dark);
+            --navbar-bg-current: var(--navbar-bg-dark);
+            --section-bg: linear-gradient(180deg, #0b1526 0%, #0a1f35 100%);
+        }
+
+        /* Apply light theme variables (default) */
+        :root:not([data-bs-theme="dark"]) {
+             --bg-current: var(--bg-light);
+             --text-current: var(--text-light);
+             --primary-current: var(--primary-light);
+             --secondary-current: var(--secondary-light);
+             --accent-current: var(--accent-light);
+             --card-bg-current: var(--card-bg-light);
+             --border-current: var(--border-light);
+            --shadow-color-current: var(--shadow-color-light);
+            --shadow-hover-current: var(--shadow-hover-light);
+            --navbar-bg-current: var(--navbar-bg-light);
+            --section-bg: linear-gradient(180deg, #0b1526 0%, #0a1f35 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background-color: var(--bg-current);
+            color: var(--text-current);
+            transition: background-color var(--transition-speed) var(--transition-ease), color var(--transition-speed) var(--transition-ease);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            color: var(--primary-current);
+            transition: color var(--transition-speed) var(--transition-ease);
+        }
+
+        p {
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .text-white-75 {
+            color: rgba(255, 255, 255, 0.75) !important;
+        }
+
+        section {
+            padding: 80px 0;
+            overflow: hidden; /* Contain animations/shadows */
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
+            color: var(--primary-current);
+        }
+
+        /*-----------------------------------*/
+        /* 2. Navigation                   */
+        /*-----------------------------------*/
+        .navbar {
+            background: radial-gradient(circle at 0% 0%, rgba(99, 91, 255, 0.12), transparent 30%),
+                        radial-gradient(circle at 100% 0%, rgba(0, 212, 255, 0.12), transparent 32%),
+                        var(--navbar-bg-current);
+            backdrop-filter: blur(var(--navbar-blur));
+            -webkit-backdrop-filter: blur(var(--navbar-blur));
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 15px 40px var(--shadow-color-current);
+            padding: 0.8rem 0;
+            transition: background-color var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease);
+            /* `position: sticky` added via Bootstrap class `sticky-top` */
+            position: relative;
+            overflow: hidden;
+        }
+        .navbar::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(120deg, rgba(255,255,255,0.08), transparent 45%, rgba(255,255,255,0.03));
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-current);
+            transition: color var(--transition-speed) var(--transition-ease);
+        }
+         .navbar-brand i {
+             color: var(--secondary-current);
+             transition: color var(--transition-speed) var(--transition-ease);
+         }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-current);
+            transition: color var(--transition-speed) var(--transition-ease);
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-current);
+            transition: width var(--transition-speed) var(--transition-ease);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-current);
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+             width: 60%; /* Underline effect */
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+        .navbar-toggler:focus {
+             box-shadow: none;
+        }
+        .navbar-toggler-icon {
+             /* Customize if needed */
+             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .nav-cta {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.08) inset;
+            padding: 10px 20px;
+        }
+        .nav-cta:hover {
+            color: #fff;
+        }
+
+
+        /*-----------------------------------*/
+        /* 3. CTA Button                   */
+        /*-----------------------------------*/
+         /* .cta-button {
+            background: linear-gradient(45deg, var(--secondary-current), var(--accent-current));
+            border: none;
+            padding: 18px 38px;
+            font-weight: 650;
+            color: white; 
+            transition: transform 0.2s ease, box-shadow var(--transition-speed) var(--transition-ease), background var(--transition-speed) var(--transition-ease);
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 4px 10px rgba(0,0,0, 0.1);
+         } */
+         .cta-button {
+            background: linear-gradient(45deg, var(--secondary-current), var(--accent-current));
+            border: none;
+            padding: 16px 35px;
+            font-weight: 625;
+            color: white; /* Text color contrasts well with gradient */
+            transition: transform 0.2s ease, box-shadow var(--transition-speed) var(--transition-ease), background var(--transition-speed) var(--transition-ease);
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite alternate; /* Apply the pulse animation */
+            }
+
+            @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+            100% {
+                box-shadow: 0 0 20px 5px var(--accent-current); /* A more prominent shadow/glow */
+            }
+            }
+
+         .cta-button:hover {
+             transform: translateY(-3px) scale(1.03);
+             box-shadow: 0 8px 20px var(--shadow-hover-current);
+             background: linear-gradient(60deg, var(--secondary-current), var(--accent-current)); /* Slightly shift gradient */
+             color: white; /* Ensure color stays white */
+         }
+
+        .btn-outline-primary {
+            color: var(--secondary-current);
+            border-color: var(--secondary-current);
+            font-weight: 500;
+            padding: 10px 28px;
+            transition: all var(--transition-speed) var(--transition-ease);
+             border-radius: var(--border-radius-sm);
+        }
+         .btn-outline-primary:hover {
+             background-color: var(--secondary-current);
+             color: white;
+             transform: translateY(-2px);
+             box-shadow: 0 5px 15px var(--shadow-hover-current);
+         }
+
+
+        /*-----------------------------------*/
+        /* 4. Hero Section                 */
+        /*-----------------------------------*/
+        .hero-section {
+            padding: 120px 0 80px 0;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(99, 91, 255, 0.12), transparent 30%),
+                radial-gradient(circle at 90% 10%, rgba(0, 212, 255, 0.16), transparent 32%),
+                linear-gradient(135deg, rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.75));
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            inset: 15% -10% 0 -10%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 70px 70px;
+            opacity: 0.4;
+            transform: skewY(-6deg);
+            pointer-events: none;
+        }
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-text {
+            font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 30px;
+            max-width: 620px;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e6edff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            backdrop-filter: blur(6px);
+        }
+        .hero-pill i {
+            color: var(--accent-current);
+        }
+
+        .hero-visual {
+            position: relative;
+            width: 100%;
+            min-height: 430px;
+            perspective: 1400px;
+            transform-style: preserve-3d;
+        }
+        .visual-core {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            filter: drop-shadow(0 24px 40px rgba(0,0,0,0.4));
+        }
+        .orb {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ffffff, rgba(255,255,255,0)), linear-gradient(135deg, var(--secondary-current), var(--accent-current));
+            opacity: 0.25;
+            animation: pulseOrb 8s ease-in-out infinite;
+        }
+        .glass-panel {
+            position: absolute;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+            padding: 22px;
+            color: #e2e8f0;
+            transform-style: preserve-3d;
+        }
+        .glass-panel.main {
+            width: 320px;
+            transform: rotateY(-12deg) rotateX(8deg) translateZ(40px);
+            animation: floatCard 7s ease-in-out infinite;
+        }
+        .glass-panel.secondary {
+            width: 240px;
+            right: 8%;
+            bottom: 6%;
+            transform: rotateY(15deg) rotateX(4deg) translateZ(10px);
+            animation: floatCardAlt 9s ease-in-out infinite;
+        }
+        .panel-metric {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .panel-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            font-weight: 600;
+            color: #e6edff;
+        }
+        .halo {
+            position: absolute;
+            inset: 8%;
+            border-radius: 24px;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 91, 255, 0.28), transparent 55%);
+            filter: blur(30px);
+            transform: translateZ(-20px);
+        }
+        .floating-chip {
+            position: absolute;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e6edff;
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+            animation: chipDrift 10s ease-in-out infinite;
+        }
+        .floating-chip.one { top: 10%; right: 18%; }
+        .floating-chip.two { bottom: 18%; left: 6%; animation-delay: 1.5s; }
+
+        @keyframes floatCard {
+            0%, 100% { transform: rotateY(-12deg) rotateX(8deg) translateZ(40px) translateY(0); }
+            50% { transform: rotateY(-8deg) rotateX(10deg) translateZ(60px) translateY(-12px); }
+        }
+        @keyframes floatCardAlt {
+            0%, 100% { transform: rotateY(15deg) rotateX(4deg) translateZ(10px) translateY(0); }
+            50% { transform: rotateY(8deg) rotateX(6deg) translateZ(26px) translateY(-10px); }
+        }
+        @keyframes pulseOrb {
+            0%, 100% { transform: scale(0.95); opacity: 0.22; }
+            50% { transform: scale(1.05); opacity: 0.32; }
+        }
+        @keyframes chipDrift {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-12px) translateX(8px); }
+        }
+
+
+        /*-----------------------------------*/
+        /* 4B. Hero Accents + Video Grid     */
+        /*-----------------------------------*/
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: #c7d7ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            backdrop-filter: blur(6px);
+        }
+
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+            margin-top: 20px;
+        }
+        .metric-card {
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
+        .metric-card strong { display: block; font-size: 1.3rem; color: #fff; }
+        .metric-card small { opacity: 0.8; }
+
+        .video-reel-section {
+            background: var(--section-bg);
+            position: relative;
+            overflow: hidden;
+        }
+        .video-reel-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(99, 91, 255, 0.18), transparent 35%),
+                        radial-gradient(circle at 80% 10%, rgba(0, 212, 255, 0.18), transparent 38%);
+            pointer-events: none;
+        }
+        .video-reel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .video-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 28px 60px rgba(0,0,0,0.45);
+        }
+        .video-card video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+        .video-card .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 25%, rgba(0, 0, 0, 0.5) 100%);
+            pointer-events: none;
+        }
+        .video-meta {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .video-tag {
+            align-self: flex-start;
+            padding: 8px 12px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.12);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+        .video-summary {
+            font-size: 0.95rem;
+            opacity: 0.92;
+        }
+        .play-indicator {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            display: grid;
+            place-items: center;
+            color: #fff;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+
+        /*-----------------------------------*/
+        /* 4C. Secondary Sections Refresh    */
+        /*-----------------------------------*/
+        .services-section {
+            position: relative;
+            background: var(--section-bg);
+        }
+        .services-section .section-title {
+            margin-bottom: 40px;
+        }
+        .service-card {
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            isolation: isolate;
+            overflow: hidden;
+        }
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(99, 91, 255, 0.14), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        .service-card:hover::after { opacity: 1; }
+        .service-card > * {
+            position: relative;
+            z-index: 1;
+        }
+        .service-card h4 { letter-spacing: -0.2px; }
+
+        .why-us-section {
+            position: relative;
+            background: var(--section-bg);
+        }
+        .why-us-card {
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 10px 32px rgba(0,0,0,0.12);
+        }
+
+        .testimonial-section {
+            position: relative;
+            background: var(--section-bg);
+        }
+        .testimonial-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 15% 20%, rgba(0, 212, 255, 0.12), transparent 40%),
+                        radial-gradient(circle at 80% 0%, rgba(99, 91, 255, 0.12), transparent 40%);
+            pointer-events: none;
+        }
+        .testimonial-card {
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+        }
+
+        .contact-section {
+            position: relative;
+            overflow: hidden;
+            background: var(--section-bg);
+        }
+        .contact-section .contact-form,
+        .contact-section .contact-info {
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+        }
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            inset: 5% 10%;
+            border-radius: 30px;
+            border: 1px dashed rgba(255,255,255,0.12);
+            pointer-events: none;
+        }
+
+        /* Chat zone */
+        .chat-section {
+            background: var(--section-bg);
+        }
+        .chat-section .section-title,
+        .testimonial-section .section-title,
+        .video-reel-section .section-title,
+        .contact-section .section-title,
+        .section-ink .section-title {
+            color: #f8fafc;
+        }
+        .chat-shell {
+            position: relative;
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+            box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+            overflow: hidden;
+        }
+        .chat-shell::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(99,91,255,0.12), transparent 45%),
+                        radial-gradient(circle at 80% 10%, rgba(0,212,255,0.12), transparent 40%);
+            pointer-events: none;
+        }
+        .chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 22px;
+            background: rgba(0,0,0,0.25);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            color: #e8ecf5;
+        }
+        .chat-header .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #3bff93;
+            box-shadow: 0 0 0 6px rgba(59,255,147,0.12);
+            margin-right: 8px;
+        }
+        .chat-window {
+            background: rgba(0,0,0,0.18);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 16px;
+            margin: 16px;
+            height: 420px;
+            overflow-y: auto;
+        }
+        .chat-input {
+            padding: 0 16px 18px 16px;
+        }
+        .chat-input .input-group {
+            background: rgba(255,255,255,0.08);
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,0.12);
+            overflow: hidden;
+        }
+        .chat-input input {
+            background: transparent;
+            color: #e8ecf5;
+            border: none;
+        }
+        .chat-input input::placeholder { color: #cbd5e1; }
+        .chat-input .btn-primary {
+            background: linear-gradient(120deg, var(--secondary-current), var(--accent-current));
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid rgba(255,255,255,0.12);
+            background: #060d1a;
+            color: #f1f5ff;
+            padding: 32px 0;
+        }
+        .footer a {
+            color: #cfe1ff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Work with us */
+        .workwithus-section {
+            background: var(--section-bg);
+        }
+        .workwithus-section p {
+            color: #e6edf7;
+        }
+        .workwithus-section a {
+            color: #9ad8ff;
+        }
+        .workwithus-section a:hover {
+            color: #ffffff;
+        }
+
+        /*-----------------------------------*/
+        /* 5. Service Cards                */
+        /*-----------------------------------*/
+        .service-card {
+            background-color: var(--card-bg-current);
+            border-radius: var(--border-radius-md);
+            padding: 40px 30px;
+            box-shadow: 0 5px 20px var(--shadow-color-current);
+            transition: transform var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease), border-color var(--transition-speed) var(--transition-ease), background-color var(--transition-speed) var(--transition-ease);
+            border: 1px solid transparent;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* For potential future effects */
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px var(--shadow-hover-current);
+            border-color: var(--secondary-current);
+        }
+
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--secondary-current);
+            margin-bottom: 25px;
+            transition: color var(--transition-speed) var(--transition-ease), transform 0.2s ease;
+            display: inline-block; /* Needed for transform */
+        }
+         .service-card:hover .service-icon {
+            transform: scale(1.1);
+         }
+
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-current);
+            margin-bottom: 15px;
+            transition: color var(--transition-speed) var(--transition-ease);
+        }
+
+        .service-text {
+            font-size: 1rem;
+            color: var(--text-current);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1; /* Push link to bottom */
+             transition: color var(--transition-speed) var(--transition-ease);
+        }
+         .service-card .learn-more {
+             font-weight: 600;
+             color: var(--secondary-current);
+             text-decoration: none;
+             transition: color var(--transition-speed) var(--transition-ease);
+         }
+         .service-card .learn-more:hover {
+             color: var(--accent-current);
+         }
+
+
+        /*-----------------------------------*/
+        /* 6. Why Us Section               */
+        /*-----------------------------------*/
+        .why-us-section {
+            background-color: var(--bg-current); /* Use standard bg or a slightly different shade */
+             /* Example: Slightly darker background for contrast */
+             /* background-color: color-mix(in srgb, var(--bg-current) 95%, black); */
+        }
+
+        .why-us-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: var(--border-radius-md);
+            transition: transform var(--transition-speed) var(--transition-ease), background-color var(--transition-speed) var(--transition-ease);
+            background-color: var(--card-bg-current);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            /* No initial shadow for a flatter look, or add subtle one */
+             /* box-shadow: 0 3px 10px var(--shadow-color-current); */
+        }
+
+        .why-us-card:hover {
+            transform: translateY(-8px);
+            background-color: var(--card-bg-current); /* Add background on hover */
+            box-shadow: 0 10px 30px var(--shadow-color-current);
+        }
+
+        .why-us-icon {
+            font-size: 2.5rem;
+            color: var(--accent-current); /* Use accent color */
+            margin-bottom: 25px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .why-us-card:hover .why-us-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .why-us-card h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-current);
+            margin-bottom: 15px;
+        }
+
+        .why-us-card p {
+            font-size: 1rem;
+            color: var(--text-current);
+            opacity: 0.9;
+        }
+
+
+        /*-----------------------------------*/
+        /* 7. Testimonial Section          */
+        /*-----------------------------------*/
+        .testimonial-section {
+             background-color: var(--bg-current);
+             /* Optionally add a subtle pattern or gradient */
+        }
+
+        .testimonial-card {
+            background-color: #0f1c33;
+            border-radius: var(--border-radius-md);
+            padding: 40px;
+            box-shadow: 0 8px 25px var(--shadow-color-current);
+            margin: 0 15px; /* Default Bootstrap carousel spacing */
+            transition: background-color var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease);
+             border-left: 5px solid var(--secondary-current); /* Add accent border */
+        }
+
+        .testimonial-text {
+            font-size: 1.15rem;
+            color: #ffffff;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 40px; /* Space for quote icon */
+        }
+         .testimonial-text::before {
+             content: '\F6B0'; /* Bootstrap Icons quote */
+             font-family: 'bootstrap-icons';
+             position: absolute;
+             left: 0;
+             top: 0;
+             font-size: 1.8rem;
+             color: var(--secondary-current);
+             opacity: 0.7;
+         }
+
+
+        .testimonial-author {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            text-align: right;
+        }
+
+        .testimonial-author cite {
+            font-style: normal;
+            font-weight: 400;
+            color: #d6deed;
+            opacity: 0.9;
+            display: block; /* Put title on new line */
+            font-size: 0.9rem;
+        }
+
+        /* Carousel Controls */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+             background-color: var(--secondary-current);
+             border-radius: 50%;
+             padding: 15px;
+             background-size: 60%; /* Adjust icon size */
+             opacity: 0.8;
+             transition: opacity var(--transition-speed) var(--transition-ease);
+        }
+        .carousel-control-prev:hover .carousel-control-prev-icon,
+        .carousel-control-next:hover .carousel-control-next-icon {
+            opacity: 1;
+        }
+
+        /*-----------------------------------*/
+        /* 8. Contact Section              */
+        /*-----------------------------------*/
+        .contact-section {
+            background: var(--section-bg);
+        }
+
+        .contact-form {
+            background-color: rgba(255,255,255,0.06);
+            padding: 40px;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+            transition: background-color var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #e8ecf5;
+        }
+
+        .contact-form .form-control {
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: var(--border-radius-sm);
+            padding: 14px;
+            font-size: 1rem;
+            transition: border-color var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease), background-color var(--transition-speed) var(--transition-ease);
+            background-color: rgba(255,255,255,0.06); /* Match overall background */
+            color: #e8ecf5;
+        }
+        .contact-form h4 {
+            color: #f8fafc;
+        }
+
+        .contact-form .form-control:focus {
+            border-color: var(--secondary-current);
+            box-shadow: 0 0 0 0.25rem var(--shadow-hover-current); /* Use theme shadow */
+            background-color: rgba(255,255,255,0.08); /* Slightly different focus background */
+            outline: none;
+        }
+         .contact-form .form-control::placeholder {
+            color: #d0d7e6;
+             opacity: 0.7;
+         }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-info {
+            padding-left: 30px; /* Adjusted padding */
+            background-color: rgba(255,255,255,0.04);
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #e6edf7;
+        }
+
+        .contact-info h4 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #f8fafc;
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            color: #e6edf7;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            color: var(--secondary-current);
+            margin-right: 15px;
+            font-size: 1.3rem;
+            width: 25px; /* Align icons */
+            text-align: center;
+        }
+
+        .contact-info .social-links a {
+            color: #e6edf7;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color var(--transition-speed) var(--transition-ease), transform 0.2s ease;
+            display: inline-block; /* Allows transform */
+        }
+        .contact-info .social-links a:hover {
+            color: var(--secondary-current);
+             transform: scale(1.1);
+        }
+
+
+        /*-----------------------------------*/
+        /* 9. Footer                       */
+        /*-----------------------------------*/
+        .footer {
+            background-color: var(--primary-light); /* Use the primary dark blue for footer base */
+            color: rgba(255, 255, 255, 0.8);
+            padding: 40px 0;
+            font-size: 0.95rem;
+        }
+        [data-bs-theme="dark"] .footer {
+            background-color: #111; /* Even darker for dark mode footer */
+        }
+
+        .footer p {
+            margin-bottom: 0;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color var(--transition-speed) var(--transition-ease);
+        }
+
+        .footer a:hover {
+            color: var(--accent-light); /* Use light accent for hover */
+        }
+         [data-bs-theme="dark"] .footer a:hover {
+            color: var(--accent-dark);
+         }
+
+        /*-----------------------------------*/
+        /* 10. Animations & Utilities       */
+        /*-----------------------------------*/
+        /* Refine existing or add custom animations */
+        .animate__fadeInLeft {
+             animation-duration: 0.8s;
+             animation-timing-function: ease-out;
+        }
+        .animate__fadeInRight {
+            animation-duration: 0.8s;
+            animation-timing-function: ease-out;
+        }
+         /* Example: Add subtle fade-in up */
+         .fade-in-up {
+             opacity: 0;
+             transform: translateY(20px);
+             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+         }
+         .fade-in-up.visible { /* Add 'visible' class with JS on scroll */
+             opacity: 1;
+             transform: translateY(0);
+         }
+
+        /* Stagger children animation example (needs JS) */
+         .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+         }
+
+         #cta-fijo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        #cta-fijo button {
+            background-color: #dc2626;
+            color: white;
+            font-weight: 600;
+            padding: 12px 20px;
+            border-radius: 40px;
+            border: none;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #cta-fijo button:hover {
+            background-color: #b91c1c;
+        }
+
+        #cta-fijo span.countdown {
+            font-size: 12px;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+
+        /*-----------------------------------*/
+        /* 11. Responsive Adjustments      */
+        /*-----------------------------------*/
+        @media (max-width: 992px) {
+            .hero-content {
+                text-align: center;
+                padding-right: 0;
+                margin-bottom: 50px; /* Space between text and image on smaller screens */
+            }
+             .hero-text {
+                 margin-left: auto;
+                 margin-right: auto;
+             }
+            .hero-visual {
+                min-height: 360px;
+                margin-top: 24px;
+            }
+
+            .contact-info {
+                padding-left: 0;
+                margin-top: 50px;
+                text-align: center;
+            }
+             .contact-info p {
+                justify-content: center;
+             }
+            .section-title {
+                font-size: 2.4rem;
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+             section {
+                 padding: 60px 0;
+             }
+            .hero-section {
+                padding: 90px 0 60px 0;
+                 min-height: auto;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-text {
+                 font-size: 1rem;
+            }
+            .hero-metrics {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .video-reel-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-card {
+                margin: 15px 0; /* Adjust carousel margin for stacking */
+            }
+            .footer {
+                 text-align: center;
+            }
+             .footer .text-md-end {
+                 text-align: center !important;
+                 margin-top: 15px;
+             }
+        }
+
+    </style>
+
+    
+
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-main" data-bs-offset="80"> 
+    <!-- 🔥 BOTÓN FLOTANTE CON CONTADOR -->
+<div id="cta-fijo">
+  <button onclick="scrollToContact()">
+    🔥 Últimas <strong>3 plazas</strong> disponibles
+    <span class="countdown">⏳ Expira en <span id="countdown">--:--:--</span></span>
+  </button>
+</div>
+
+    <nav id="navbar-main" class="navbar navbar-expand-lg sticky-top"> <div class="container">
+
+            <a class="navbar-brand" href=" {{ url_for('index') }} "><img src="static/logo.png" alt="Evolutia AI" style="height: 130px;">
+                <!-- <i class="bi bi-stars me-2"></i> -->
+                </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('index') }}#home" data-i18n="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}#services" data-i18n="services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}#chatbot-interface" data-i18n="chatbot">Chatbot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=" {{ url_for('index') }}#why-us" data-i18n="why_us">Why Us</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href=" {{ url_for('index') }}#testimonials" data-i18n="testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" data-i18n="contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=" {{ url_for('index') }}#workwithus" data-i18n="workwithus"> Trabaja con nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-globe"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                          <li><button class="dropdown-item language-btn" data-lang="en">English</button></li>
+                          <li><button class="dropdown-item language-btn" data-lang="es">Español</button></li>
+                        </ul>
+                      </li>
+                     
+                </ul>
+                <a href="#contact" class="btn cta-button nav-cta ms-lg-3" data-i18n="get_started">Get Started</a>
+                </div>
+               
+
+        </div>
+    </nav>
+
+
+    <div class="main-content" >
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+
+    <section id="testimonials" class="testimonial-section section-ink">
+        <div class="container">
+            <h2 class="section-title" data-i18n="hear_from_clients_title">Hear From Our Clients</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text" data-i18n="testimonial_1">"Evolutia AI's chatbot didn't just answer questions, it improved our lead conversion rate significantly. Truly impressive!"</p>
+                                    <footer class="testimonial-author">
+                                        Alex Chen
+                                        <cite>Marketing Director, Innovate Solutions</cite>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text" data-i18n="testimonial_2">"The workflow automation saved us countless hours. We can now focus on strategic growth instead of manual tasks."</p>
+                                     <footer class="testimonial-author">
+                                        Maria Garcia
+                                        <cite>Operations Manager, GrowthHub Co.</cite>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text" data-i18n="testimonial_3">"The content generation tool is fantastic. It helps our small team produce consistent, high-quality blog posts and social media updates."</p>
+                                     <footer class="testimonial-author">
+                                        Sam Peterson
+                                        <cite>Founder, Digital Leap Agency</cite>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text" data-i18n="testimonial_4">"Managing orders and customer inquiries on WhatsApp used to be overwhelming. Evolutia AI's assistant has automated everything, allowing me to focus on making delicious croquetas!"</p>
+                                     <footer class="testimonial-author">
+                                        Fer
+                                        <cite>Las Croquetas de Fer Owner</cite>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text" data-i18n="testimonial_5">"Evolutia AI's chatbot has been a game-changer for our business. It's not only efficient but also very user-friendly. I highly recommend it! You have more time for your family and your business is growing."</p>
+                                     <footer class="testimonial-author">
+                                        Antonio
+                                        <cite>Dueño de Farmacia</cite>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden" data-i18n="previous">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden" data-i18n="next">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section section-ink">
+        <div class="container">
+            <h2 class="section-title" style="color:#f8fafc;" data-i18n="get_started_title">Ready to Elevate Your Business with AI?</h2>
+            <div class="row g-4 g-lg-5 align-items-center">
+                <div class="col-lg-6">
+                    <form class="contact-form" id="contactForm">
+                        <h4 class="mb-4 text-center text-lg-start" data-i18n="contact_us_title">Send Us a Message</h4>
+                        <div class="mb-3">
+                             <input type="text" id="contactName" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                             <input type="email" id="contactEmail" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                             <input type="text" id="contactCompany" class="form-control" placeholder="Your Company (Optional)">
+                        </div>
+                        <div class="mb-3">
+                             <textarea id="contactMessage" class="form-control" rows="5" placeholder="How can AI help your business?" required></textarea>
+                        </div>
+                        <button data-i18n="submit_request" type="submit" class="btn cta-button w-100">Submit Request</button>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <h4 class="fw-bold mb-4" data-i18n="contact_title">Get in Touch</h4>
+                        <p><i class="bi bi-envelope-fill"></i> evolutiaai@gmail.com</p>
+                        <!-- <p><i class="bi bi-telephone-fill"></i> (555) 123-4567</p> -->
+                        <!-- <p><i class="bi bi-geo-alt-fill"></i> 123 AI Avenue, Tech City, TX 75001</p> -->
+                        <!-- <div class="mt-4 pt-3 social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        </div> -->
+                    </div>
+                    
+                </div>
+                
+                <!-- <div class="col-lg-3">
+                    <img src="static/ad1.png" class="img-fluid" style="width: 300px; height: 450px;" alt="Descriptive Alt Text">
+                </div>
+
+                <div class="col-12 text-center mt-4">
+                    <p class="text-muted" data-i18n="no_spam">We respect your privacy. Your information will not be shared with anyone.</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="workwithus" class="workwithus-section section-ink">
+        <div class="container">
+        <h2 class="section-title" data-i18n="work_with_us_title">Trabaja con nosotros</h2>
+        <p data-i18n="work_with_us_text">¡Estamos <strong>completamente desbordados</strong>! La demanda de nuestros servicios de IA se ha disparado a niveles <strong>sin precedentes</strong> y, sinceramente, ¡necesitamos <strong>más manos YA</strong> para mantener el ritmo! <br>Si te <strong>apasiona la IA</strong>, el <strong>desafío constante</strong> y quieres formar parte de un equipo que no para de <strong>crecer y crear soluciones increíbles</strong>, esta es tu <strong>oportunidad de oro</strong>. Simplemente, <strong>no podemos seguir el ritmo sin ti</strong>. La presión es <strong>alta</strong>, ¡pero la recompensa y el impacto de tu trabajo serán <strong>aún mayores</strong>! <br>Si eres de los que no le teme al <strong>trabajo intenso</strong> y quieres dejar tu huella en <strong>proyectos punteros</strong> y de <strong>vanguardia</strong>, envíanos tu CV a la <strong>velocidad del rayo</strong> a <a href="mailto:evolutiaai@gmail.com">evolutiaai@gmail.com</a>. ¡<strong>No hay tiempo que perder!</strong></p>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p>&copy; <span id="currentYear"></span> Evolutia AI. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+  function scrollToContact() {
+    const target = document.querySelector('#contact');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  const countdownElement = document.getElementById('countdown');
+  const LS_KEY = "sospiCountdownStart";
+  const duration = 24 * 60 * 60 * 1000; // 24 horas en milisegundos
+
+  let startTime = localStorage.getItem(LS_KEY);
+
+  if (!startTime) {
+    startTime = Date.now();
+    localStorage.setItem(LS_KEY, startTime);
+  } else {
+    startTime = parseInt(startTime);
+  }
+
+  function updateCountdown() {
+    const now = Date.now();
+    const endTime = startTime + duration;
+    let timeLeft = Math.max(0, Math.floor((endTime - now) / 1000)); // en segundos
+
+    const hours = String(Math.floor(timeLeft / 3600)).padStart(2, '0');
+    const minutes = String(Math.floor((timeLeft % 3600) / 60)).padStart(2, '0');
+    const seconds = String(timeLeft % 60).padStart(2, '0');
+
+    countdownElement.textContent = `${hours}:${minutes}:${seconds}`;
+
+    if (timeLeft <= 0) {
+      document.getElementById('cta-fijo').style.display = 'none';
+    }
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Basic Scrollspy Activation (Bootstrap handles this via attributes)
+        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+            target: '#navbar-main',
+            offset: 80 // Adjust offset based on navbar height
+        });
+
+        //--- Optional: Dark Mode Toggle ---
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or system preference
+        const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        htmlElement.setAttribute('data-bs-theme', currentTheme);
+
+        if (darkModeToggle) {
+            // Update button icon based on initial theme
+            const icon = darkModeToggle.querySelector('i');
+            if (currentTheme === 'dark') {
+                icon.classList.remove('bi-moon-stars-fill');
+                icon.classList.add('bi-sun-fill');
+            }
+
+            darkModeToggle.addEventListener('click', () => {
+                const newTheme = htmlElement.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+                htmlElement.setAttribute('data-bs-theme', newTheme);
+                localStorage.setItem('theme', newTheme); // Save preference
+
+                // Update button icon
+                if (newTheme === 'dark') {
+                    icon.classList.remove('bi-moon-stars-fill');
+                    icon.classList.add('bi-sun-fill');
+                } else {
+                     icon.classList.remove('bi-sun-fill');
+                     icon.classList.add('bi-moon-stars-fill');
+                }
+            });
+        }
+
+        //--- Optional: Simple Scroll Animation ---
+        const observerOptions = {
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% visible
+        };
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Use with .fade-in-up etc.
+                    observer.unobserve(entry.target); // Optional: stop observing once animated
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // Observe elements you want to animate
+        document.querySelectorAll('.service-card, .chatbot-interface, .testimonial-card, .why-us-card, .contact-form, .contact-info').forEach(el => {
+            el.classList.add('fade-in-up'); // Add initial state class
+            observer.observe(el);
+        });
+
+    </script>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        fbq('track', 'Contact'); // Track form submission with Facebook Pixel
+        // Get form data
+        const name = document.getElementById('contactName').value;
+        const email = document.getElementById('contactEmail').value;
+        const company = document.getElementById('contactCompany').value;
+        const message = document.getElementById('contactMessage').value;
+
+        // Prepare the data to send
+        const formData = {
+            name: name,
+            email: email,
+            company: company,
+            message: message
+        };
+
+        // --- Configuration ---
+        // const serverUrl = '/api/submit-contact-form'; // Replace with your server-side endpoint URL
+        const serverUrl = 'https://evolutia-ai-gqfpb4ete6b6h0ek.westeurope-01.azurewebsites.net/api/submit-contact-form';
+        // const serverUrl = 'http://127.0.0.1:5000/api/submit-contact-form';
+        // --- End Configuration ---
+
+        // Send the data to the server using the Fetch API
+        fetch(serverUrl, {
+            method: 'POST', // Use POST to send data
+            headers: {
+                'Content-Type': 'application/json' // Indicate that we are sending JSON data
+            },
+            body: JSON.stringify(formData) // Convert the JavaScript object to a JSON string
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json(); // Or response.text() if your server sends plain text
+        })
+        .then(data => {
+            console.log('Success:', data);
+            // Optionally, display a success message to the user
+            alert('Your request has been submitted successfully!');
+            document.getElementById('contactForm').reset(); // Clear the form
+        })
+        .catch((error) => {
+            console.error('Error sending data to server:', error);
+            // Optionally, display an error message to the user
+            alert('There was an error submitting your request. Please try again later.');
+        });
+    });
+
+    // Function to set the active language
+    function setActiveLanguage(language) {
+        // Store the selected language in localStorage for persistence
+        localStorage.setItem('language', language);
+        
+        // Update the document language attribute
+        document.documentElement.setAttribute('lang', language);
+        
+        // Load and apply translations
+        loadTranslations(language);
+    }
+
+    // Load translations based on user selection or browser settings
+    async function loadTranslations(language) {
+    try {
+        const response = await fetch(`/translations/${language}.json`);
+        const translations = await response.json();
+        
+        // Apply translations to elements with data-i18n attributes
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[key]) {
+            element.innerHTML = translations[key];
+        }
+        });
+        
+        // Highlight active language button
+        document.querySelectorAll('.language-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === language) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+        });
+    } catch (error) {
+        console.error('Failed to load translations:', error);
+    }
+    }
+
+    // Initialize with default language or user preference
+    document.addEventListener('DOMContentLoaded', () => {
+    // Add event listeners to language buttons
+    document.querySelectorAll('.language-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+        const lang = btn.getAttribute('data-lang');
+        setActiveLanguage(lang);
+        });
+    });
+    
+    // Load the saved language or default to browser language
+    const userLang = localStorage.getItem('language') || navigator.language.split('-')[0] || 'es';
+    setActiveLanguage(userLang);
+    });
+</script>
+
+
+
+</body>
+</html>

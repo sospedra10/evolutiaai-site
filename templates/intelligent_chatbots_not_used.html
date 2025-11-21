@@ -1,0 +1,576 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #4f46e5;
+            --accent-color: #818cf8;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --text-color: #334155;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: #f9fafb;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('static/pattern.svg') center/cover;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .showcase-img {
+            border-radius: 10px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefits-section {
+            background-color: #f1f5f9;
+            padding: 80px 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            margin-bottom: 25px;
+        }
+
+        .benefit-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('static/pattern.svg') center/cover;
+            opacity: 0.1;
+        }
+
+        .footer {
+            background-color: var(--dark-color);
+            color: #cbd5e1;
+            padding: 60px 0 20px;
+        }
+
+        .footer h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            color: #cbd5e1;
+            font-size: 1.3rem;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: white;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 991px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .showcase-img {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <section class="hero">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInUp">Your Intelligent WhatsApp Business Assistant</h1>
+                    <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">Simplify customer interactions, manage your stock, and process orders directly through WhatsApp with our AI-powered assistant designed for small businesses.</p>
+                    <div class="animate__animated animate__fadeInUp animate__delay-2s">
+                        <a href="#contact" class="btn btn-light me-3">Schedule a Demo</a>
+                        <a href="#features" class="btn btn-outline-light">Explore Features</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block animate__animated animate__fadeInRight animate__delay-1s">
+                    <img src="/api/placeholder/500/400" alt="Intelligent Chatbot Interface on WhatsApp" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="py-5" id="overview">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="/api/placeholder/600/450" alt="Chatbot Dashboard showing stock and orders" class="img-fluid rounded-3 showcase-img">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Manage Your Business Effortlessly with AI on WhatsApp</h2>
+                    <p class="lead mb-4">Our intelligent chatbot integrates seamlessly with WhatsApp to provide 24/7 customer support, real-time stock updates, and efficient order processing.</p>
+                    <p class="mb-4">Evolutia AI's assistant learns from your business data to handle customer inquiries, provide product information, check stock availability, and even manage new orders, all within WhatsApp. See how businesses like "Las Croquetas de Fer" and local drugstores are already benefiting.</p>
+                    <p>Reduce response times, improve customer satisfaction, and streamline your operations with our powerful WhatsApp business solution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light" id="features">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">Key Features</h2>
+                <p class="lead mx-auto" style="max-width: 700px;">Our intelligent WhatsApp assistant is packed with features to help your business thrive.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 d-flex flex-column h-100">
+                        <i class="bi bi-whatsapp feature-icon"></i>
+                        <h4>WhatsApp Integration</h4>
+                        <p>Connect with your customers on their preferred platform, providing instant support and managing inquiries directly within WhatsApp.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 d-flex flex-column h-100">
+                        <i class="bi bi-box-seam feature-icon"></i>
+                        <h4>Stock Management</h4>
+                        <p>Get real-time updates on your inventory, track stock levels, and receive alerts for low stock, all through simple WhatsApp commands.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 d-flex flex-column h-100">
+                        <i class="bi bi-cart-check feature-icon"></i>
+                        <h4>Order Management</h4>
+                        <p>Process new orders, update order status, and send notifications to customers directly via WhatsApp, integrated with your database.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 d-flex flex-column h-100">
+                        <i class="bi bi-robot feature-icon"></i>
+                        <h4>Intelligent Chatbot</h4>
+                        <p>Our AI understands customer queries, provides relevant information, and learns from interactions to improve over time.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 d-flex flex-column h-100">
+                        <i class="bi bi-person-check feature-icon"></i>
+                        <h4>Personalized Interactions</h4>
+                        <p>Leverage customer data to provide tailored responses, recommendations, and solutions within WhatsApp.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 d-flex flex-column h-100">
+                        <i class="bi bi-graph-up feature-icon"></i>
+                        <h4>Analytics Dashboard</h4>
+                        <p>Monitor performance with insights into customer interactions, stock levels, and order processing efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">Simple Setup</h2>
+                <p class="lead mx-auto" style="max-width: 700px;">Getting started with your WhatsApp business assistant is quick and easy.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="row g-4">
+                        <div class="col-md-3 text-center">
+                            <div class="p-3">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                                    <i class="bi bi-1-circle-fill" style="font-size: 2rem;"></i>
+                                </div>
+                                <h5>Connect WhatsApp</h5>
+                                <p class="small">Easily link your business WhatsApp account.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <div class="p-3">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                                    <i class="bi bi-2-circle-fill" style="font-size: 2rem;"></i>
+                                </div>
+                                <h5>Integrate Data</h5>
+                                <p class="small">Connect your stock and order database.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <div class="p-3">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                                    <i class="bi bi-3-circle-fill" style="font-size: 2rem;"></i>
+                                </div>
+                                <h5>Customize</h5>
+                                <p class="small">Tailor the AI to your business needs.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 text-center">
+                            <div class="p-3">
+                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                                    <i class="bi bi-4-circle-fill" style="font-size: 2rem;"></i>
+                                </div>
+                                <h5>Go Live</h5>
+                                <p class="small">Start managing your business on WhatsApp.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Benefits for Your Business</h2>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="bi bi-chat-dots"></i>
+                        </div>
+                        <div>
+                            <h5>Improved Customer Engagement</h5>
+                            <p>Provide instant support and personalized interactions on WhatsApp, leading to happier customers.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <div>
+                            <h5>Increased Efficiency</h5>
+                            <p>Automate routine tasks like answering FAQs, checking stock, and processing orders, freeing up your time.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="bi bi-cash-coin"></i>
+                        </div>
+                        <div>
+                            <h5>Reduced Operational Costs</h5>
+                            <p>Lower support costs and improve sales by providing 24/7 assistance without needing extra staff.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="bi bi-list-check"></i>
+                        </div>
+                        <div>
+                            <h5>Better Inventory Management</h5>
+                            <p>Keep track of your stock in real-time and avoid overselling or running out of products.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <img src="/api/placeholder/600/500" alt="Business benefits illustration" class="img-fluid rounded-3 showcase-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">Success Stories</h2>
+                <p class="lead mx-auto" style="max-width: 700px;">See how businesses like yours are growing with our WhatsApp assistant.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/api/placeholder/60/60" class="client-avatar me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Fer</h5>
+                                <p class="small text-muted mb-0">Owner, Las Croquetas de Fer</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Managing orders and customer inquiries on WhatsApp used to be overwhelming. Evolutia AI's assistant has automated everything, allowing me to focus on making delicious croquetas!"</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/api/placeholder/60/60" class="client-avatar me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Maria Rodriguez</h5>
+                                <p class="small text-muted mb-0">Pharmacist</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Our customers can now easily check if we have their medication in stock via WhatsApp. It has saved us so much time on the phone!"</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/api/placeholder/60/60" class="client-avatar me-3" alt="Client">
+                            <div>
+                                <h5 class="mb-0">Carlos López</h5>
+                                <p class="small text-muted mb-0">Small Business Owner</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Integrating Evolutia AI with our order database has streamlined our sales process. We now handle more orders with less effort."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">Frequently Asked Questions</h2>
+                <p class="lead mx-auto" style="max-width: 700px;">Find quick answers to common questions about our WhatsApp business assistant.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    How does the WhatsApp integration work?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our system connects to your business WhatsApp number, allowing the AI assistant to send and receive messages, manage inquiries, and process requests automatically.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Can it manage my existing stock and order database?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, our assistant can integrate with most common database systems to provide real-time stock information and manage orders efficiently.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    What if the chatbot can't understand a customer's request?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our system includes options to escalate complex queries to a human agent, ensuring that all customer needs are addressed.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Is my business data secure?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We prioritize security with robust encryption and data protection measures. Your business data is kept confidential and secure.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    What kind of support do you offer?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We provide comprehensive support during setup and offer ongoing assistance to ensure your WhatsApp assistant runs smoothly.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+{% endblock %}

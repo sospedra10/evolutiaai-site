@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section id="home" class="hero-section">
+    <div class="container position-relative">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6 hero-content">
+                <span class="eyebrow">Asistente 24/7 en WhatsApp</span>
+                <h1 class="hero-title animate__animated animate__fadeInLeft" data-i18n="home-title">Tu asistente vende mientras duermes</h1>
+                <p class="hero-text animate__animated animate__fadeInLeft" style="animation-delay: 0.2s;" data-i18n="home-text">
+                    Automatizamos respuestas, citas y cobros en WhatsApp en menos de 48h. Sin esperas, sin perder leads, siempre con tono humano.
+                </p>
+                <div class="hero-badges animate__animated animate__fadeInLeft" style="animation-delay: 0.25s;">
+                    <span class="hero-pill"><i class="bi bi-lightning-charge-fill"></i>Respuesta &lt; 40s</span>
+                    <span class="hero-pill"><i class="bi bi-emoji-smile"></i>98% autoservicio</span>
+                    <span class="hero-pill"><i class="bi bi-whatsapp"></i>WhatsApp + Instagram</span>
+                </div>
+                <div class="d-flex flex-wrap gap-3 align-items-center mt-4 animate__animated animate__fadeInLeft" style="animation-delay: 0.35s;">
+                    <a href="#contact" class="btn cta-button mb-2 mb-md-0" data-i18n="request_consultation">Reservar demo</a>
+                    <a href="#assistant-reels" class="btn btn-outline-light mb-2 mb-md-0" data-i18n="explore_services">Ver asistentes en vivo</a>
+                </div>
+                <div class="hero-metrics animate__animated animate__fadeInLeft" style="animation-delay: 0.45s;">
+                    <div class="metric-card">
+                        <strong>+50%</strong>
+                        <small>Leads cualificados en la primera semana</small>
+                    </div>
+                    <div class="metric-card">
+                        <strong>-94%</strong>
+                        <small>Tiempo medio de respuesta</small>
+                    </div>
+                    <div class="metric-card">
+                        <strong>48h</strong>
+                        <small>Implementaci&oacute;n completa</small>
+                    </div>
+                </div>
+                <div class="trusted-by-section my-4 animate__animated animate__fadeInLeft" style="animation-delay: 0.55s;">
+                    <p class="mb-2 text-white-50" style="font-weight: 500;">Equipos que ya delegan su atenci&oacute;n:</p>
+                    <div class="d-flex align-items-center gap-4 flex-wrap">
+                        <img src="static/croquetas_logo.jpg" alt="Las Croquetas de Fer" style="height: 34px; filter: grayscale(80%); opacity: 0.8; border-radius: 10px; background: rgba(255,255,255,0.04); padding: 6px;">
+                        <img src="static/reental_logo.png" alt="Reental" style="height: 34px; filter: grayscale(80%); opacity: 0.8; border-radius: 10px; background: rgba(255,255,255,0.04); padding: 6px;">
+                        <img src="static/farmacia_logo.jpeg" alt="Farmacia" style="height: 34px; filter: grayscale(80%); opacity: 0.8; border-radius: 10px; background: rgba(255,255,255,0.04); padding: 6px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center">
+                <div class="hero-visual animate__animated animate__fadeInRight">
+                    <div class="halo"></div>
+                    <div class="visual-core">
+                        <div class="orb"></div>
+                    </div>
+                    <div class="glass-panel main">
+                        <div class="panel-metric">
+                            <span class="panel-badge"><i class="bi bi-broadcast-pin"></i> Live</span>
+                            <div>
+                                <h5 class="mb-1 text-white">Evolutia Assistant</h5>
+                                <p class="mb-0 text-white-50 small">Conversaciones atendidas en tiempo real</p>
+                            </div>
+                        </div>
+                        <div class="panel-metric">
+                            <span class="panel-badge"><i class="bi bi-clock-history"></i> 22s</span>
+                            <div>
+                                <p class="mb-0 text-white-50 small">Promedio hasta primer mensaje</p>
+                            </div>
+                        </div>
+                        <div class="panel-metric mb-0">
+                            <span class="panel-badge"><i class="bi bi-graph-up-arrow"></i> +35</span>
+                            <div>
+                                <p class="mb-0 text-white-50 small">Negocios activos esta semana</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-panel secondary">
+                        <div class="panel-metric mb-2">
+                            <i class="bi bi-calendar2-check"></i>
+                            <div class="ms-2">
+                                <p class="mb-0 text-white"><strong>14</strong> citas cerradas hoy</p>
+                                <small class="text-white-50">Agenda integrada</small>
+                            </div>
+                        </div>
+                        <div class="panel-metric mb-0">
+                            <i class="bi bi-robot"></i>
+                            <div class="ms-2">
+                                <p class="mb-0 text-white"><strong>82%</strong> leads autocalificados</p>
+                                <small class="text-white-50">Sin agentes humanos</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-chip one"><i class="bi bi-chat-dots"></i> Tono natural y emp&aacute;tico</div>
+                    <div class="floating-chip two"><i class="bi bi-shield-check"></i> Validaci&oacute;n de pagos y stock</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="assistant-reels" class="video-reel-section section-ink">
+    <div class="container position-relative">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-4">
+                <span class="eyebrow">Asistente en acci&oacute;n</span>
+                <h2 class="section-title text-start text-white mb-4">Mira c&oacute;mo trabaja en WhatsApp</h2>
+                <p style="color: rgba(255,255,255,0.82);">
+                    Videos reales de nuestro asistente gestionando pedidos, dudas y reservas para distintos sectores. Cada flujo est&aacute; afinado para convertir sin fricci&oacute;n.
+                </p>
+                <ul class="list-unstyled text-white-50 mt-3">
+                    <li class="mb-2"><i class="bi bi-check2-circle me-2 text-white"></i>Respuestas automatizadas con tono humano</li>
+                    <li class="mb-2"><i class="bi bi-check2-circle me-2 text-white"></i>Upselling y cobro dentro del chat</li>
+                    <li class="mb-2"><i class="bi bi-check2-circle me-2 text-white"></i>Reportes diarios a tu equipo</li>
+                </ul>
+                <a href="#contact" class="btn cta-button mt-3">Lanzar mi asistente</a>
+            </div>
+            <div class="col-lg-8">
+                <div class="video-reel-grid">
+                    <div class="video-card">
+                        <video src="static/croquetas_chat.mp4" autoplay loop muted playsinline></video>
+                        <div class="video-overlay"></div>
+                        <div class="play-indicator"><i class="bi bi-play-fill"></i></div>
+                        <div class="video-meta">
+                            <span class="video-tag">Salud &amp; Farma</span>
+                            <p class="video-summary">Gestiona stock, verifica recetas y agenda env&iacute;os sin esperas.</p>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video src="static/croquetas_chat.mp4" autoplay loop muted playsinline></video>
+                        <div class="video-overlay"></div>
+                        <div class="play-indicator"><i class="bi bi-play-fill"></i></div>
+                        <div class="video-meta">
+                            <span class="video-tag">Real Estate</span>
+                            <p class="video-summary">Precalifica leads, comparte tours y agenda visitas autom&aacute;ticamente.</p>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video src="static/croquetas_chat.mp4" autoplay loop muted playsinline></video>
+                        <div class="video-overlay"></div>
+                        <div class="play-indicator"><i class="bi bi-play-fill"></i></div>
+                        <div class="video-meta">
+                            <span class="video-tag">Servicios</span>
+                            <p class="video-summary">Resuelve dudas frecuentes, confirma horarios y env&iacute;a recordatorios.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="services-section section-ink py-5">
+    <div class="container">
+        <h2 class="section-title" data-i18n="our-services-title">Our AI-Powered Services</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                <div class="card service-card">
+                    <i class="bi bi-chat-quote service-icon"></i>
+                    <h4 class="service-title" data-i18n="intelligent_chatbots">Intelligent Chatbots</h4>
+                    <p class="service-text" data-i18n="intelligent_chatbots_text">Engage customers 24/7 with context-aware, AI-driven chatbots trained on your business data.</p>
+                    <a href="#contact" class="learn-more mt-auto" data-i18n="learn_more">Learn More <i class="bi bi-arrow-right-short"></i></a>
+                    <!-- <a href="intelligent-chatbots" class="learn-more mt-auto" data-i18n="learn_more">Learn More <i class="bi bi-arrow-right-short"></i></a> -->
+
+                </div>
+            </div>
+             <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                <div class="card service-card" style="transition-delay: 0.1s;"> <i class="bi bi-gear-wide-connected service-icon"></i>
+                    <h4 class="service-title" data-i18n="workflow_automation">Workflow Automation</h4>
+                    <p class="service-text" data-i18n="workflow_automation_text">Streamline repetitive tasks and optimize operations using smart AI automation solutions.</p>
+                     <a href="#contact" class="learn-more mt-auto" data-i18n="learn_more">Learn More <i class="bi bi-arrow-right-short"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                <div class="card service-card" style="transition-delay: 0.2s;"> <i class="bi bi-robot service-icon"></i>
+                    <h4 class="service-title" data-i18n="predictive_analytics">Predictive Analytics</h4>
+                    <p class="service-text" data-i18n="predictive_analytics_text">Gain actionable insights and make informed decisions with AI-driven predictive analytics.</p>
+                     <a href="#contact" class="learn-more mt-auto" data-i18n="learn_more">Learn More <i class="bi bi-arrow-right-short"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                <div class="card service-card" style="transition-delay: 0.2s;"> <i class="bi bi-code-square service-icon"></i>
+                    <h4 class="service-title" data-i18n="website_creation">Website Creation and Optimization</h4>
+                    <p class="service-text" data-i18n="website_creation_text">Create and optimize your website for better user experience and higher conversion rates with AI-driven tools.</p>
+                     <a href="#contact" class="learn-more mt-auto" data-i18n="learn_more">Learn More <i class="bi bi-arrow-right-short"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
+                <div class="card service-card" style="transition-delay: 0.2s;"> <i class="bi bi-file-earmark-text service-icon"></i>
+                    <h4 class="service-title" data-i18n="content_generation">Content Generation</h4>
+                    <p class="service-text" data-i18n="content_generation_text">Generate high-quality marketing copy, reports, and creative content efficiently with AI assistance.</p>
+                     <a href="#contact" class="learn-more mt-auto" data-i18n="learn_more">Learn More <i class="bi bi-arrow-right-short"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="chatbot-interface" class="chat-section section-ink py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+                <span class="eyebrow d-inline-flex justify-content-center mb-3">Pruebalo ahora</span>
+                <h2 class="section-title text-center mb-2" data-i18n="chatbot_title">Chat with Our AI Assistant</h2>
+                <p class="text-white-50 mb-0">Simula a tu asistente en vivo y comprueba fluidez, tono y rapidez.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="chat-shell">
+                    <div class="chat-header">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="status-dot"></span>
+                            <div>
+                                <div class="fw-bold text-white">Evolutia Assistant</div>
+                                <small class="text-white-50">Disponible 24/7 - tono humano</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2 text-white-50">
+                            <i class="bi bi-shield-check text-white"></i>
+                            <small>Datos seguros</small>
+                        </div>
+                    </div>
+                    <div id="chat-messages" class="chat-window">
+                    </div>
+                    <div class="chat-input">
+                        <div class="input-group">
+                            <input type="text" id="user-query" class="form-control form-control-lg py-3" placeholder="Type your message here..." aria-label="User message" data-i18n-placeholder="chat_placeholder_type_message">
+                            <button id="send-button" class="btn btn-primary px-4" type="button" data-i18n="send_button_text_key">
+                                <i class="bi bi-send me-2"></i>Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="why-us" class="why-us-section section-ink">
+    <div class="container">
+        <h2 class="section-title" data-i18n="why_partner_with_title">Why Partner With Evolutia AI?</h2>
+        <div class="row g-4">
+             <div class="col-md-4">
+                <div class="why-us-card">
+                    <i class="bi bi-bullseye why-us-icon"></i>
+                    <h4 data-i18n="tailored_solutions">Tailored Solutions</h4>
+                    <p data-i18n="tailored_solutions_text">Custom AI strategies focused specifically on SMB challenges and opportunities.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="why-us-card">
+                     <i class="bi bi-people-fill why-us-icon"></i>
+                    <h4 data-i18n="expert_ai_team">Expert AI Team</h4>
+                    <p data-i18n="expert_ai_team_text">Access dedicated specialists in AI, machine learning, and business integration.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="why-us-card">
+                    <i class="bi bi-graph-up-arrow why-us-icon"></i>
+                    <h4 data-i18n="measurable_results">Measurable Results</h4>
+                    <p data-i18n="measurable_results_text">Focus on delivering tangible ROI and significant efficiency gains for your business.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        const chatMessagesContainer = document.getElementById('chat-messages');
+        const userQueryInput = document.getElementById('user-query');
+        const sendButton = document.getElementById('send-button');
+
+        // Initialize an array to store the conversation history
+        let conversationHistory = []; // This will hold objects like { role: 'user', content: 'hello' }
+
+        // Configura marked.js para interpretar \n como <br>
+        marked.setOptions({
+            breaks: true, // Esto hace que los saltos de linea simples (\n) generen <br>
+            gfm: true     // GitHub Flavored Markdown (generalmente bueno para compatibilidad)
+        });
+
+        // Function to add a message to the chat window and history
+        function addMessageToChat(message, sender) {
+            const messageWrapper = document.createElement('div');
+            messageWrapper.classList.add('d-flex', 'mb-3');
+
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('p-2', 'px-3', 'rounded', 'shadow-sm');
+            messageElement.style.maxWidth = '80%';
+            messageElement.style.wordBreak = 'break-word';
+
+            if (sender === 'user') {
+                messageElement.classList.add('bg-primary', 'text-white');
+                messageWrapper.classList.add('justify-content-end');
+                // Add user message to history
+                conversationHistory.push({ role: 'user', content: message });
+                messageElement.textContent = message;
+            } else { // 'bot' or 'bot-error'
+                messageElement.classList.add('bg-secondary', 'text-white');
+                if (sender === 'bot-error') {
+                    messageElement.classList.remove('bg-secondary');
+                    messageElement.classList.add('bg-danger');
+                }
+                messageWrapper.classList.add('justify-content-start');
+                // Add bot message to history (only if it's a valid response)
+                if (sender === 'bot') {
+                    conversationHistory.push({ role: 'assistant', content: message });
+                }
+                // Usa marked.parse() para convertir el Markdown a HTML
+                messageElement.innerHTML = marked.parse(message);
+                console.log('Message:', message);
+                console.log("Text Content:");
+                console.log(messageElement.textContent);
+                console.log("HTML:");
+                console.log(messageElement.innerHTML);
+                
+            }
+            // messageElement.textContent = message;
+            messageWrapper.appendChild(messageElement);
+            chatMessagesContainer.appendChild(messageWrapper);
+            chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+        }
+
+        // Function to handle sending a message
+        async function handleSendMessage() {
+            const query = userQueryInput.value.trim();
+            if (!query) return;
+
+            addMessageToChat(query, 'user');
+            userQueryInput.value = '';
+
+            const originalButtonHTML = sendButton.innerHTML;
+            sendButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
+            sendButton.disabled = true;
+            userQueryInput.disabled = true;
+
+            try {
+                // Include the entire conversation history in the request
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: query,
+                        history: conversationHistory // Send the history
+                    })
+                });
+
+                if (!response.ok) {
+                    let errorData;
+                    try {
+                        errorData = await response.json();
+                    } catch (e) {}
+                    const errorMessage = errorData?.error?.message || errorData?.detail || errorData?.message || `Server error: ${response.status}`;
+                    throw new Error(errorMessage);
+                }
+
+                const data = await response.json();
+                const botResponse = data.response || data.answer || data.reply || "Sorry, I couldn't process that right now.";
+                addMessageToChat(botResponse, 'bot'); // This now also adds to history
+            } catch (error) {
+                console.error('Chatbot API error:', error);
+                addMessageToChat(error.message || 'An error occurred. Please try again.', 'bot-error');
+            } finally {
+                sendButton.innerHTML = originalButtonHTML;
+                sendButton.disabled = false;
+                userQueryInput.disabled = false;
+                userQueryInput.focus();
+            }
+        }
+
+        sendButton.addEventListener('click', handleSendMessage);
+        userQueryInput.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                handleSendMessage();
+            }
+        });
+
+        // Optional: Add an initial welcome message from the bot (and add to history)
+        setTimeout(() => {
+            addMessageToChat("Hola! Soy el Asistente de Evolutia AI. Como te puedo ayudar hoy?", 'bot');
+        }, 500);
+    });
+</script>
+
+
+
+{% endblock %}
