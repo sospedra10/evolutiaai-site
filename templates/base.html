@@ -649,10 +649,15 @@
         .contact-section::after {
             content: '';
             position: absolute;
-            inset: 5% 10%;
+            inset: 0;
             border-radius: 30px;
             border: 1px dashed rgba(255,255,255,0.12);
             pointer-events: none;
+            z-index: 0;
+        }
+        .contact-section .container {
+            position: relative;
+            z-index: 1;
         }
 
         /* Chat zone */
