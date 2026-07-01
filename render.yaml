@@ -5,6 +5,9 @@ services:
     branch: main
     buildCommand: echo "Using committed static build"
     staticPublishPath: ./public
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
     routes:
       - type: rewrite
         source: /*
