@@ -1784,8 +1784,8 @@
             const body = encodeURIComponent(
                 `Nombre: ${name}\nEmail: ${email}\nEmpresa: ${company || '-'}\n\nMensaje:\n${message}`
             );
-            window.location.href = `mailto:evolutiaai@gmail.com?subject=${subject}&body=${body}`;
             alert('No hemos podido enviar el formulario automaticamente. Se abrira tu correo con el mensaje preparado para enviarlo a evolutiaai@gmail.com.');
+            window.location.href = `mailto:evolutiaai@gmail.com?subject=${subject}&body=${body}`;
         });
     });
 
