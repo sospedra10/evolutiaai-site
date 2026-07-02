@@ -1576,6 +1576,7 @@
                              <textarea id="contactMessage" class="form-control" rows="5" placeholder="How can AI help your business?" required></textarea>
                         </div>
                         <button data-i18n="submit_request" type="submit" class="btn cta-button w-100">Submit Request</button>
+                        <div id="contactFormStatus" class="mt-3 text-center" role="status" aria-live="polite"></div>
                     </form>
                 </div>
                 <div class="col-lg-4">
@@ -1741,6 +1742,13 @@
 <script>
     const CONTACT_FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxwxOrYGtPgyFq_6g4YM1MxvaQMG6hlZqtfzKdlBhEMMNoOFDjUPgY3AYjqFL9XWOyfgw/exec';
 
+    function setContactStatus(message, type) {
+        const status = document.getElementById('contactFormStatus');
+        if (!status) return;
+        status.textContent = message;
+        status.className = `mt-3 text-center ${type === 'success' ? 'text-success' : 'text-warning'}`;
+    }
+
     function openEmailFallback(name, email, company, message) {
         const subject = encodeURIComponent('Solicitud de demo desde evolutiaai.es');
         const body = encodeURIComponent(
@@ -1753,6 +1761,7 @@
     document.getElementById('contactForm').addEventListener('submit', async function(event) {
         event.preventDefault(); // Prevent the default form submission
         fbq('track', 'Contact'); // Track form submission with Facebook Pixel
+        setContactStatus('', 'success');
         // Get form data
         const name = document.getElementById('contactName').value;
         const email = document.getElementById('contactEmail').value;
@@ -1786,7 +1795,7 @@
                 console.warn('Contact endpoint response was opaque or not OK:', response.status);
             }
 
-            alert('Your request has been submitted successfully!');
+            setContactStatus('Solicitud enviada correctamente. Te contactaremos pronto.', 'success');
             document.getElementById('contactForm').reset(); // Clear the form
         } catch (error) {
             console.error('Error sending data to server:', error);
