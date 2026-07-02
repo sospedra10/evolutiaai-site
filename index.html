@@ -1739,7 +1739,18 @@
     </script>
 
 <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
+    const CONTACT_FORM_ENDPOINT = '';
+
+    function openEmailFallback(name, email, company, message) {
+        const subject = encodeURIComponent('Solicitud de demo desde evolutiaai.es');
+        const body = encodeURIComponent(
+            `Nombre: ${name}\nEmail: ${email}\nEmpresa: ${company || '-'}\n\nMensaje:\n${message}`
+        );
+        alert('No hemos podido enviar el formulario automaticamente. Se abrira tu correo con el mensaje preparado para enviarlo a evolutiaai@gmail.com.');
+        window.location.href = `mailto:evolutiaai@gmail.com?subject=${subject}&body=${body}`;
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', async function(event) {
         event.preventDefault(); // Prevent the default form submission
         fbq('track', 'Contact'); // Track form submission with Facebook Pixel
         // Get form data
@@ -1756,37 +1767,31 @@
             message: message
         };
 
-        const serverUrl = 'https://evolutia-ai-gqfpb4ete6b6h0ek.westeurope-01.azurewebsites.net/api/submit-contact-form';
+        if (!CONTACT_FORM_ENDPOINT) {
+            openEmailFallback(name, email, company, message);
+            return;
+        }
 
-        // Send the data to the server using the Fetch API
-        fetch(serverUrl, {
-            method: 'POST', // Use POST to send data
-            headers: {
-                'Content-Type': 'application/json' // Indicate that we are sending JSON data
-            },
-            body: JSON.stringify(formData) // Convert the JavaScript object to a JSON string
-        })
-        .then(response => {
+        try {
+            const response = await fetch(CONTACT_FORM_ENDPOINT, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8'
+                },
+                body: JSON.stringify({ ...formData, source: 'evolutiaai.es' })
+            });
+
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                console.warn('Contact endpoint response was opaque or not OK:', response.status);
             }
-            return response.json(); // Or response.text() if your server sends plain text
-        })
-        .then(data => {
-            console.log('Success:', data);
-            // Optionally, display a success message to the user
+
             alert('Your request has been submitted successfully!');
             document.getElementById('contactForm').reset(); // Clear the form
-        })
-        .catch((error) => {
+        } catch (error) {
             console.error('Error sending data to server:', error);
-            const subject = encodeURIComponent('Solicitud de demo desde evolutiaai.es');
-            const body = encodeURIComponent(
-                `Nombre: ${name}\nEmail: ${email}\nEmpresa: ${company || '-'}\n\nMensaje:\n${message}`
-            );
-            alert('No hemos podido enviar el formulario automaticamente. Se abrira tu correo con el mensaje preparado para enviarlo a evolutiaai@gmail.com.');
-            window.location.href = `mailto:evolutiaai@gmail.com?subject=${subject}&body=${body}`;
-        });
+            openEmailFallback(name, email, company, message);
+        }
     });
 
     // Function to set the active language
